@@ -1,0 +1,17 @@
+<form #loginForm="ngForm" (ngSubmit)="onSubmit()" class="text-center" style="color: #757575;" >
+
+    <div class="md-form mt-3">
+        <label for="materialSubscriptionFormPasswords">Name      </label>
+        <input type="text" id="materialSubscriptionFormPasswords" name="userId" class="form-control" mdbInput [(ngModel)]="loginModel.userId">
+    </div>
+
+    <div class="md-form">
+        <label for="materialLoginFormPassword">Password</label>
+        <input type="password" id="materialLoginFormPassword" name="password" class="form-control" mdbInput [(ngModel)]="loginModel.password">
+    </div>
+    <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect
+            type="submit" routerLink="/login">LOGIN</button>
+    <button mdbBtn color="info" outline="true" rounded="true" block="true" class="z-depth-0 my-4 waves-effect" mdbWavesEffect routerLink="/user">
+       SIGN UP</button>
+
+</form>

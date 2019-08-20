@@ -1,0 +1,56 @@
+<!-- Default form contact -->
+<form class="text-center border border-light p-5">
+
+    <p class="h4 mb-4">Notifications</p>
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Notification Type</th>
+            <th scope="col">Message</th>
+            <th scope="col">Notification Time</th>
+            <th scope="col">Notification Target</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let notificationJson of notificationModels; index as i">
+            <th scope="row">{{ i + 1 }}</th>
+            <td>
+                {{ notificationJson.notificationType }}
+            </td>
+            <td>{{ notificationJson.message }}</td>
+            <td>{{ notificationJson.notificationTime | date }}</td>
+            <td>{{ notificationJson.notificationTarget }}</td>
+        </tr>
+        </tbody>
+    </table>
+
+    <!-- Name -->
+    <input type="text" id="to" class="form-control mb-4" placeholder="To">
+
+    <!-- Message -->
+    <div class="form-group">
+        <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="Message"></textarea>
+    </div>
+
+    <!-- Date -->
+    <input type="text"
+           placeholder="Datepicker"
+           class="form-control"
+           bsDatepicker>
+
+    <!-- Notification Type -->
+    <label>Notification Type</label>
+    <select class="browser-default custom-select mb-4">
+        <option value="" disabled>Choose option</option>
+        <option value="1" selected>Birthday</option>
+        <option value="2">Medications</option>
+        <option value="3">Weather</option>
+    </select>
+
+    <!-- Send button -->
+    <button mdbBtn color="info" block="true" type="submit" (ngModel)="onSubmit()">Send</button>
+
+</form>
+

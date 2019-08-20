@@ -1,0 +1,19 @@
+<form #userForm="ngForm" (ngSubmit)="onSubmit()">
+    <div>
+        <label for="userId">User Id:</label>
+        <input type="text" id="userId" name="userId" placeholder="Choose a User Id" [(ngModel)]="userModel.userId">
+    </div>
+    <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" placeholder="Enter Password" [(ngModel)]="userModel.password">
+    </div>
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" placeholder="Enter First Name" [(ngModel)]="userModel.firstName">
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" placeholder="Enter Last Name" [(ngModel)]="userModel.lastName">
+    </div>
+    <button name="submit">Submit</button>
+</form>
